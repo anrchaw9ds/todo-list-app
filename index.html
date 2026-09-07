@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="todo-wrapper">
+            <!-- Header -->
+            <header class="header">
+                <h1 class="title">My Tasks</h1>
+                <p class="subtitle">Stay organized and productive</p>
+            </header>
+
+            <!-- Input Section -->
+            <div class="input-section">
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        class="todo-input" 
+                        id="todoInput" 
+                        placeholder="Add a new task..."
+                        autocomplete="off"
+                    >
+                    <button class="add-btn" id="addBtn">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Filter & Sort -->
+            <div class="controls-section">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">
+                        <i class="fas fa-list"></i> All
+                    </button>
+                    <button class="filter-btn" data-filter="active">
+                        <i class="fas fa-circle"></i> Active
+                    </button>
+                    <button class="filter-btn" data-filter="completed">
+                        <i class="fas fa-check-circle"></i> Completed
+                    </button>
+                </div>
+                <div class="sort-buttons">
+                    <button class="sort-btn" id="sortBtn" title="Sort by date">
+                        <i class="fas fa-sort"></i>
+                    </button>
+                    <button class="clear-btn" id="clearBtn" title="Clear completed">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-section">
+                <div class="stat">
+                    <span class="stat-label">Total:</span>
+                    <span class="stat-value" id="totalCount">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Active:</span>
+                    <span class="stat-value" id="activeCount">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Completed:</span>
+                    <span class="stat-value" id="completedCount">0</span>
+                </div>
+            </div>
+
+            <!-- Todo List -->
+            <div class="todo-container">
+                <ul class="todo-list" id="todoList">
+                    <!-- Todos will be added here dynamically -->
+                </ul>
+                <div class="empty-state" id="emptyState">
+                    <i class="fas fa-inbox"></i>
+                    <p>No tasks yet. Add one to get started!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
